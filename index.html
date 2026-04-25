@@ -1,23 +1,616 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+ <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "광진구 인터넷 가입 시 현금지원 혜택은 얼마나 받을 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "현금지원 금액은 통신사(SKT, KT, LG U+)와 가입 상품(100메가, 기가 인터넷, IPTV 결합 여부)에 따라 달라집니다. 2026년 기준으로 평균 30~50만 원대의 현금지원 또는 사은품 혜택을 받을 수 있으며, 일부 신규 가입 이벤트나 고가 요금제 가입 시 더 많은 혜택이 제공될 수 있습니다. 정확한 금액은 전문가 견적 비교를 통해 확인하는 것이 가장 좋습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "광진구에서 SKT, KT, LG U+ 중 어떤 통신사가 가장 추천되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "통신사 선택은 개인의 상황에 따라 달라집니다. SKT, KT, LG U+ 모두 광진구 지역에 안정적인 서비스를 제공하고 있습니다. KT는 넓은 커버리지와 안정성이 장점이며, SKT와 LG U+는 모바일 결합 상품을 통한 할인 혜택이 강력합니다. 거주하시는 광진구 지역(예: 자양동, 구의동) 아파트나 빌라의 통신 인프라 환경에 따라 추천 상품이 달라질 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "인터넷 가입 시 '기가 인터넷'과 '100메가 인터넷'의 차이점은 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "기가 인터넷은 100메가 인터넷보다 최대 10배 빠른 속도를 제공합니다. 일반 가정에서 웹 서핑이나 유튜브 시청 정도는 100메가로도 충분하지만, 4K/8K 고화질 스트리밍, 대용량 파일 다운로드, 온라인 게임 등을 즐긴다면 기가 인터넷(500메가 또는 1기가)이 적합합니다. 광진구 자양동, 구의동 등 신규 아파트는 대부분 기가 인터넷 설치 환경이 구축되어 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "인터넷 가입 시 3년 약정은 필수인가요? 1년이나 2년 약정은 없나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "통신사들은 일반적으로 3년 약정(36개월)을 기준으로 가장 많은 혜택을 제공하며, 대부분의 요금제 역시 3년 약정을 기준으로 책정됩니다. 1년 또는 2년 약정 상품도 존재하지만, 월 요금 할인이 적거나 현금지원 혜택이 거의 없으므로, 장기 거주자에게는 3년 약정이 가장 합리적인 선택으로 추천됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "광진구 빌라나 주택은 아파트보다 인터넷 설치가 어렵나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "광진구 내 빌라나 단독 주택의 경우, 아파트에 비해 통신사 인입선 설치에 제약이 있을 수 있습니다. 특히 20년 이상된 노후 주택의 경우 광케이블 설치가 어렵거나 추가 작업이 필요할 수 있습니다. 하지만 SKT, KT, LG U+의 광진구 지점에서 최적의 설치 방안을 제공하므로, 견적 요청 시 정확한 주소를 알려주시면 가능 여부와 예상 비용을 안내받을 수 있습니다."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- 스타일: 부드럽고 다채로운 색, 타이틀 강조, 계층 구조 -->
+    <style>
+      :root {
+        --primary-color: #007bff; /* 파란색 계열 */
+        --secondary-color: #0056b3; /* 진한 파란색 */
+        --accent-color: #f0f4f8; /* 밝은 회색 배경 */
+        --highlight-color: #e9ecef; /* 아주 밝은 회색 배경 */
+        --text-color: #333333; /* 어두운 회색 텍스트 */
+        --bg-light: #f8f9fa; /* 연한 배경색 */
+        --bg-white: #ffffff; /* 흰색 배경 */
+        --btn-color: #28a745; /* 강조색 (버튼 - 초록색) */
+        --btn-hover: #218838; /* 버튼 호버색 */
+        --section-bg-dark: #f0f8ff; /* 섹션 배경 (밝은 하늘색) */
+      }
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        margin:0; padding:0;
+        background-color: var(--bg-light);
+        color: var(--text-color);
+        line-height:1.7; /* 줄간격 조정 */
+        font-size: 16px; /* 기본 폰트 크기 */
+      }
+      .container {
+        max-width: 1000px;
+        margin:0 auto;
+        padding:0 20px;
+      }
+      header {
+        background-color: var(--primary-color);
+        padding: 30px 20px;
+        text-align: center;
+        color: var(--bg-white);
+      }
+      header h1 {
+        margin: 0;
+        font-size: 2.8em;
+        font-weight:900; /* 폰트 두께 강조 */
+      }
+      header h1 a {
+        color: var(--bg-white);
+        text-decoration: none;
+      }
+      .hero {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: var(--bg-white);
+        text-align: center;
+        padding: 90px 20px;
+        position: relative;
+      }
+      .hero h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        font-weight:900;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      }
+      .hero p {
+        font-size: 1.4em;
+        margin-bottom: 35px;
+      }
+      .cta-btn {
+        background-color: var(--btn-color);
+        color: var(--bg-white);
+        padding: 18px 45px;
+        font-size:1.3em;
+        font-weight: bold;
+        border:none;
+        border-radius:50px;
+        cursor:pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        margin-top: 20px;
+      }
+      .cta-btn:hover {
+        background-color: var(--btn-hover);
+        transform: translateY(-3px);
+      }
+      .compare-form-box {
+        background-color: var(--bg-white);
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        margin-top: 30px;
+        text-align: left;
+      }
+      .compare-form-box h2 {
+        color: var(--primary-color);
+        text-align: center;
+        margin-bottom: 25px;
+        font-size:2.2em;
+        font-weight:700;
+      }
+      .compare-form-box label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--text-color);
+      }
+      .compare-form-box input[type="text"],
+      .compare-form-box input[type="tel"],
+      .compare-form-box select {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 1em;
+      }
+      .form-group {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .form-group > div {
+        flex: 1;
+      }
+
+      .content-section {
+        margin-top: 40px;
+        padding: 60px 0;
+        background-color: var(--bg-white);
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      }
+      .content-section h2 {
+        font-size: 2.8em;
+        color: var(--secondary-color);
+        margin-bottom: 30px;
+        font-weight: 700;
+        text-align: center;
+        border-bottom: 3px solid var(--primary-color);
+        padding-bottom: 15px;
+      }
+      .content-section h3 {
+        font-size: 1.8em;
+        color: var(--primary-color);
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-left: 5px solid var(--btn-color);
+        padding-left: 15px;
+        font-weight: 700;
+      }
+      .content-section h4 {
+        font-size: 1.4em;
+        color: var(--text-color);
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
+      .feature-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+      .feature-grid .item {
+        width: calc(33.33% - 20px);
+        margin: 10px;
+        padding: 30px;
+        background-color: var(--highlight-color);
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        transition: transform 0.3s, background-color 0.3s;
+      }
+      .feature-grid .item:hover {
+        transform: translateY(-5px);
+        background-color: #f0f8ff;
+      }
+      .feature-grid .item img {
+        width: 80px; height: 80px;
+        margin-bottom: 15px;
+      }
+      .keyword-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 30px;
+      }
+      .keyword-list li {
+        background-color: var(--secondary-color);
+        color: var(--bg-white);
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 20px;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+      .keyword-list li:hover {
+        background-color: var(--primary-color);
+      }
+      .faq-item {
+        border-bottom: 1px solid #ddd;
+        padding: 20px 0;
+        transition: background-color 0.3s;
+      }
+      .faq-item:last-child {
+        border-bottom: none;
+      }
+      .faq-item h3 {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.4em;
+        color: var(--primary-color);
+        margin-top: 0;
+        margin-bottom: 0;
+        font-weight: 500;
+      }
+      .faq-item h3::after {
+        content: '+';
+        font-size: 1.5em;
+        color: var(--btn-color);
+        transition: transform 0.3s;
+      }
+      .faq-item.active h3::after {
+        content: '-';
+        transform: rotate(180deg);
+      }
+      .faq-item p {
+        display: none;
+        padding-top: 10px;
+        color: #555;
+        font-size: 1.1em;
+        margin-left: 15px; /* 들여쓰기 */
+      }
+      .faq-item.active p {
+        display: block;
+      }
+      footer {
+        background-color: var(--secondary-color);
+        color: var(--bg-white);
+        text-align: center;
+        padding: 40px 20px;
+        font-size: 0.9em;
+        margin-top: 40px;
+      }
+      footer a {
+        color: var(--bg-white);
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      .info-list {
+        list-style-type: disc;
+        margin-left: 20px;
+      }
+      .info-list li {
+        margin-bottom: 10px;
+        color: #444;
+      }
+      .table-container {
+        margin: 30px 0;
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        font-size: 0.9em;
+      }
+      th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+      }
+      th {
+        background-color: var(--secondary-color);
+        color: var(--bg-white);
+        font-weight: 500;
+      }
+      td {
+        background-color: var(--highlight-color);
+      }
+      .comparison-table td:nth-child(even) {
+        background-color: #f8f8f8;
+      }
+      .graph-container {
+        margin: 30px 0;
+        padding: 20px;
+        background-color: var(--highlight-color);
+        border-radius: 8px;
+        text-align: center;
+      }
+      .graph-container img {
+        max-width: 100%;
+        height: auto;
+      }
+      .external-link-list {
+        list-style: none;
+        padding: 0;
+      }
+      .external-link-list li {
+        margin-bottom: 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--btn-color);
+      }
+      .external-link-list li a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        font-size: 1.1em;
+      }
+      .external-link-list li a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 { font-size: 2.4em; }
+        .hero p { font-size: 1.2em; }
+        .cta-btn { padding: 15px 30px; font-size: 1.1em; }
+        .compare-form-box { padding: 25px; }
+        .content-section h2 { font-size: 2.2em; }
+        .feature-grid .item { width: 100%; margin: 10px 0; }
+        .keyword-list li { margin: 3px; font-size: 0.9em; }
+        .form-group { flex-direction: column; }
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="/">광진구 인터넷 가입 전문가이드</a></h1>
+        </div>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        <section class="hero">
+            <div class="container">
+                <h1>광진구 인터넷 최저가 비교, 현금지원 혜택까지!</h1>
+                <p>자양동, 구의동, 광장동 등 광진구 전 지역에서 SKT, KT, LG U+ 인터넷을 비교하고 최대 혜택으로 가입하세요. 2026년 최신 요금제와 사은품 정보를 제공합니다.</p>
+                <div class="compare-form-box">
+                    <h2>광진구 인터넷 가입 무료 견적 신청</h2>
+                    <p>간단한 정보 입력으로 광진구 지역별 통신사별 요금과 현금지원 금액을 동시에 확인하세요.</p>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <div>
+                                <label for="service-type">희망 서비스</label>
+                                <select id="service-type" name="service-type" required>
+                                    <option value="">서비스 유형 선택</option>
+                                    <option value="internet">인터넷 단독 가입</option>
+                                    <option value="internet-tv">인터넷 + TV 결합</option>
+                                    <option value="package">인터넷 + TV + 휴대폰 결합</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="speed">희망 속도</label>
+                                <select id="speed" name="speed" required>
+                                    <option value="">인터넷 속도 선택</option>
+                                    <option value="100m">100메가 (광랜)</option>
+                                    <option value="500m">500메가 (기가 라이트)</option>
+                                    <option value="1g">1기가 (기가 인터넷)</option>
+                                    <option value="10g">10기가</option>
+                                </select>
+                            </div>
+                        </div>
+                        <label for="address">광진구 설치 주소 (동/호수 포함)</label>
+                        <input type="text" id="address" name="address" placeholder="예: 광진구 자양동 00아파트 101동 101호" required>
+                        <label for="installation-date">희망 설치일</label>
+                        <input type="date" id="installation-date" name="installation-date" required>
+                        <label for="contact-phone">연락처</label>
+                        <input type="tel" id="contact-phone" name="contact-phone" placeholder="휴대폰 번호를 입력하세요" required>
+                        <label for="memo">문의사항 (추가 할인/결합 등)</label>
+                        <textarea id="memo" name="memo" placeholder="현재 사용 중인 통신사와 휴대폰 결합 희망 여부 등을 적어주세요."></textarea>
+                        <button type="submit" class="cta-btn">무료 견적 요청하고 혜택 비교하기</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>광진구 인터넷 가입, 왜 현명한 비교가 필요할까요?</h2>
+                <p>광진구는 아파트 단지(자양동, 광장동), 주택가(구의동, 중곡동), 오피스텔 밀집 지역(화양동)이 혼재되어 있어 지역별로 인터넷 설치 환경이 상이합니다. 단순하게 '가장 저렴한 곳'이나 '가장 많은 현금지원'만 보고 가입했다가는 실제 사용 환경에 맞지 않거나, 잦은 끊김 현상으로 불편을 겪을 수 있습니다. 2026년 최신 인터넷 가입 트렌드는 통신사별 특장점을 비교하고, 본인의 생활 패턴에 맞는 상품을 선택하는 것입니다. 광진구 지역 특성상 SKT, KT, LG U+ 3사 모두 치열한 경쟁을 벌이고 있어 신규 가입 혜택이 매우 좋은 편입니다.</p>
+
+                <h3>광진구 지역별 인터넷 가입 시 고려사항</h3>
+                <div class="table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>광진구 지역</th>
+                                <th>주요 특징</th>
+                                <th>추천 통신사/상품</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>자양동, 광장동</td>
+                                <td>대규모 아파트 단지 밀집, 신규 아파트 다수</td>
+                                <td>기가 인터넷, IPTV 결합 상품 (SKT, KT, LG U+ 모두 우수)</td>
+                            </tr>
+                            <tr>
+                                <td>구의동, 중곡동</td>
+                                <td>주택가 및 빌라 밀집, 노후 건물 다수</td>
+                                <td>KT 안정성 우수, SKT/LG U+ 광케이블 설치 가능 여부 확인 필수</td>
+                            </tr>
+                            <tr>
+                                <td>화양동, 군자동</td>
+                                <td>원룸, 오피스텔, 대학가(건대) 주변</td>
+                                <td>1인 가구 대상 100메가 또는 500메가 상품, 단기 약정 옵션 확인</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>2026년 광진구 인터넷 가입 트렌드: AI와 기가 속도</h3>
+                <p>2026년 광진구 인터넷 시장에서는 AI 기술의 발전과 함께 기가 인터넷(500메가, 1기가)의 수요가 급증하고 있습니다. 특히 재택근무, 고화질 스트리밍, 클라우드 컴퓨팅 사용이 보편화되면서 100메가 상품으로는 한계가 있습니다. SKT, KT, LG U+ 등 주요 통신사들은 AI 스피커, IPTV 서비스에 AI 기능을 탑재하여 소비자 만족도를 높이고 있습니다. 광진구 주민들은 이러한 AI 결합 상품을 통해 스마트홈 환경을 구축하고자 합니다. 또한, Gemini, ChatGPT 등 AI 서비스 이용 시에도 안정적인 네트워크 환경이 필수적입니다.</p>
+                <p><strong>광진구 인터넷 가입 혜택 극대화:</strong> 포화된 시장에서 현명한 소비자가 되기 위해서는 단순히 "가장 저렴한 곳"을 찾는 것을 넘어, "가장 많은 혜택을 제공하는 곳"을 찾아야 합니다. 신규 가입 시 제공되는 현금지원, 사은품, 상품권 등은 통신사별, 시기별로 차이가 크므로 반드시 비교해 봐야 합니다. 특히 디시(D.C) 등의 온라인 커뮤니티에서 제공되는 비공식 정보보다는, 믿을 수 있는 공식 대리점을 통해 혜택을 확인하는 것이 중요합니다.</p>
+            </div>
+        </section>
+
+        <section class="content-section" style="background-color: var(--section-bg-dark);">
+            <div class="container">
+                <h2>광진구 인터넷 통신사별 비교: SKT vs KT vs LG U+</h2>
+                <div class="feature-grid">
+                    <div class="item">
+                        <img src="https://via.placeholder.com/80/007bff/fff?text=KT" alt="KT 로고">
+                        <h3>KT (올레)</h3>
+                        <p>광진구 전 지역에서 가장 넓은 커버리지와 안정적인 품질을 자랑합니다. 특히 광장동, 구의동 빌라 지역에서도 설치 성공률이 높으며, 가족 구성원의 휴대폰 통신사 상관없이 유무선 결합 할인 혜택이 좋습니다.</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://via.placeholder.com/80/28a745/fff?text=SKT" alt="SKT 로고">
+                        <h3>SKT (SK 브로드밴드)</h3>
+                        <p>SKT 휴대폰을 사용하는 광진구 주민에게 가장 많은 할인 혜택을 제공합니다. 모바일 결합 시 월 요금 할인 폭이 크며, SKT TV 서비스와의 시너지 효과도 좋습니다. 광진구 신규 아파트 단지에서 인기가 높습니다.</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://via.placeholder.com/80/dc3545/fff?text=LG" alt="LG U+ 로고">
+                        <h3>LG U+</h3>
+                        <p>화양동, 군자동 원룸/오피스텔 거주자에게 추천되는 통신사입니다. VOD 콘텐츠 및 AI 서비스가 강점이며, LG U+ 모바일 고객에게 역시 강력한 결합 할인 혜택을 제공합니다. 2026년 신규 가입자 대상 이벤트가 많습니다.</p>
+                    </div>
+                </div>
+                <h3>함께 많이 찾는 키워드 (광진구 인터넷 가입 시)</h3>
+                <ul class="keyword-list">
+                    <li>#광진구인터넷가입</li>
+                    <li>#자양동인터넷설치</li>
+                    <li>#구의동기가인터넷</li>
+                    <li>#광장동초고속인터넷</li>
+                    <li>#화양동원룸인터넷</li>
+                    <li>#광진구인터넷요금비교</li>
+                    <li>#광진구현금지원</li>
+                    <li>#인터넷사은품많이주는곳</li>
+                    <li>#광진구인터넷추천</li>
+                    <li>#인터넷결합할인</li>
+                    <li>#인터넷내돈내산후기</li>
+                    <li>#광진구인터넷최저가</li>
+                    <li>#광진구KT인터넷</li>
+                    <li>#광진구SK인터넷</li>
+                    <li>#광진구LG인터넷</li>
+                    <li>#인터넷신규가입혜택</li>
+                    <li>#광진구인터넷설치후기</li>
+                    <li>#2026인터넷비용</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>광진구 인터넷 가입 A부터 Z: 2026년 상세 가이드</h2>
+                <p>단순히 가격만 비교하는 것이 아닌, 설치부터 사후관리까지 전 과정을 꼼꼼하게 살펴보는 것이 중요합니다. 2026년 광진구 지역의 인터넷 가입은 신규 아파트 입주 및 재개발로 인한 통신 환경 변화가 많으므로, 이 가이드를 통해 최적의 선택을 하시기 바랍니다.</p>
+
+                <h3>1. 광진구 지역별 설치 환경 분석</h3>
+                <p><strong>아파트 vs 빌라/주택:</strong> 광진구는 한강변을 따라 광장동, 자양동에 대형 아파트 단지가 밀집해 있고, 그 외 중곡동, 구의동 지역은 빌라와 주택이 많습니다. 아파트의 경우 대부분의 통신사 광케이블이 공동으로 인입되어 있어 설치가 용이합니다. 하지만 빌라나 주택은 통신사별 인입선 환경이 달라 설치 가능 여부가 달라질 수 있습니다. 특히 2026년 기준으로 10년 이상 노후화된 건물에서는 기가 인터넷 설치를 위한 추가 공사가 필요할 수 있으므로, 정확한 주소 확인이 필수입니다.</p>
+                <p><strong>광진구 주요 지역별 특징:</strong></p>
+                <div class="info-list">
+                    <li><strong>자양동 (건대입구, 강변역 주변):</strong> 오피스텔 및 주상복합이 많아 1인 가구 인터넷 수요가 높습니다. SKT, LG U+의 대학생/1인 가구 대상 프로모션 혜택을 비교해 보는 것이 좋습니다.</li>
+                    <li><strong>구의동 (테크노마트 주변):</strong> 주거 지역과 상업 지역이 혼재되어 있어 KT의 안정적인 서비스가 선호되는 경향이 있습니다.</li>
+                    <li><strong>중곡동:</strong> 주거 밀집 지역으로, 통신사별 설치 환경 차이가 적은 편입니다.</li>
+                </div>
+
+                <h3>2. 인터넷 가입 시 혜택과 비용 분석 (현금지원, 사은품)</h3>
+                <p><strong>평균 비용 분석 (2026년 기준):</strong> 광진구 인터넷 가입 시 월 청구 요금은 100메가 기준 약 20,000원대, 500메가(기가 라이트) 기준 30,000원대, 1기가 기준 30,000원 후반~40,000원 초반대로 형성됩니다. 이는 휴대폰 결합 할인 및 제휴카드 할인 여부에 따라 크게 변동될 수 있습니다. 2026년 기준으로 SKT, KT, LG U+ 모두 월 2~3만 원대의 요금제로 경쟁하고 있습니다.</p>
+                <p><strong>현금지원 및 사은품:</strong> 광진구 인터넷 가입 시 가장 중요한 고려 사항 중 하나는 현금지원 혜택입니다. 통신사 본사나 일반 대리점보다 온라인 공식 대리점에서 더 많은 현금지원과 사은품을 제공하는 경우가 많습니다. 현금지원 금액은 통신사, 요금제, 시기에 따라 다르지만, 일반적으로 30~50만 원대의 현금지원 또는 상품권을 받을 수 있습니다. 이는 신규 가입자 유치를 위한 이벤트성이 강하므로, 혜택을 꼼꼼히 비교해야 합니다. 단, 현금지원 금액이 너무 높으면 불법 영업일 수 있으므로, 한국소비자원의 가이드라인을 확인하는 것이 안전합니다.</p>
+
+                <h4>인터넷 가입 유형별 비용 절감 팁</h4>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>가입 유형</th>
+                                <th>비용 절감 핵심</th>
+                                <th>광진구 거주자 추천 대상</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>인터넷 단독 가입</td>
+                                <td>요금제 자체가 저렴한 통신사 선택 (예: 알뜰폰 결합)</td>
+                                <td>1인 가구, 휴대폰 결합이 어려운 경우</td>
+                            </tr>
+                            <tr>
+                                <td>인터넷 + TV 결합</td>
+                                <td>TV 다시보기, VOD 혜택, 월 요금 할인</td>
+                                <td>일반 가정, TV 시청 빈도가 높은 경우 (자양동, 광장동 아파트)</td>
+                            </tr>
+                            <tr>
+                                <td>인터넷 + TV + 휴대폰 결합</td>
+                                <td>가장 큰 월 요금 할인, 가족 휴대폰 통합 관리</td>
+                                <td>가족 구성원이 많은 가정, 특정 통신사(SKT/KT/LG) 모바일 사용 시</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h4>광진구 인터넷 비용 변동 요인 분석 (2026년 기준)</h4>
+                <div class="graph-container">
+                    <img src="https://via.placeholder.com/600x300/007bff/fff?text=인터넷+가입+비용+변동+요인+그래프+이미지" alt="인터넷 가입 비용 변동 요인 그래프">
+                    <p><strong>그래프 해석:</strong> 인터넷 가입 비용은 약정 기간(30%), 휴대폰 결합 할인(25%), 현금지원 규모(20%) 등 다양한 요인에 의해 변동됩니다. 특히 3년 약정 결합 상품 가입 시 비용 절감 효과가 가장 큽니다. 광진구 신규 가입 시 2026년 기준 혜택을 꼼꼼히 비교하여 '내돈내산' 후기가 좋은 업체를 선택해야 합니다.</p>
+                </div>
+
+                <h3>3. 신규 가입 시 유의사항: '호갱' 방지 팁</h3>
+                <p><strong>불필요한 상품 강매 방지:</strong> 간혹 일부 비양심적인 업체는 불필요한 부가 서비스(예: 유료 채널, 보안 서비스)를 끼워 넣어 현금지원을 늘린 것처럼 보이게 합니다. 가입 전 반드시 청구될 월 요금의 상세 내역을 확인하고, 필요 없는 서비스는 즉시 해지해야 합니다. 광진구 지역의 내돈내산 후기를 참고하여 정직한 업체를 선별하세요.</p>
+                <p><strong>약정 해지 위약금 확인:</strong> 3년 약정 기간 중 해지 시 위약금이 발생합니다. 특히 이사나 해외 거주 등 불가피한 사유가 생겨도 위약금은 면제되지 않을 수 있습니다. 2026년 기준 통신사별 위약금 산정 기준을 미리 확인하고, 단기 거주 예정이라면 1년 또는 2년 약정 상품을 고려하는 것이 좋습니다.</p>
+                <p><strong>AI 챗봇과 비교:</strong> 최근에는 Gemini, ChatGPT와 같은 AI 챗봇을 통해 인터넷 가입 정보를 검색하는 이용자가 늘고 있습니다. AI 챗봇은 일반적인 정보를 제공하지만, 실시간으로 변동하는 광진구 지역별 프로모션 정보나 정확한 현금지원 금액은 대리점 전문가와 상담하여 확인해야 합니다.</p>
+
+                <h4>자주 묻는 질문 (FAQ)</h4>
+                <div class="faq-item">
+                    <h3>인터넷 가입 시 TV 상품은 꼭 함께 해야 하나요?</h3>
+                    <p>인터넷 단독 가입도 가능하지만, TV를 함께 가입하면 월 요금 할인 폭이 훨씬 커집니다. 특히 광진구 아파트 거주자들은 대부분 인터넷+TV 결합 상품을 선택하며, 2026년 기준으로 통신사별 VOD 쿠폰이나 AI 스피커 증정 등의 추가 혜택이 많습니다. TV 시청을 하지 않더라도, 비용 절감 측면에서 결합 상품 가입을 고려해 볼 가치가 있습니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>광진구 내에서도 동네마다 인터넷 품질 차이가 있나요?</h3>
+                    <p>네, 미세하지만 차이가 있습니다. 광진구 자양동, 광장동의 신축 아파트는 광케이블 인프라가 잘 갖춰져 있어 기가 인터넷 속도가 잘 나옵니다. 반면, 노후 주택이나 빌라 밀집 지역은 통신사별 인입선 환경에 따라 속도 편차가 발생할 수 있습니다. 2026년 기준으로 SKT, KT, LG U+ 모두 광진구 지역망을 지속적으로 개선하고 있으나, 가입 전 거주 지역의 설치 가능 여부와 예상 속도를 확인하는 것이 중요합니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>인터넷 가입 후 사은품을 받지 못하거나 문제가 발생하면 어떻게 해야 하나요?</h3>
+                    <p>인터넷 가입 시 받은 사은품(현금지원 포함)은 '경품고시제'에 따라 일정 금액 이상이 정해져 있습니다. 만약 가입 후 약속된 사은품을 받지 못했다면, 한국소비자원이나 방송통신위원회에 민원을 제기할 수 있습니다. 2026년 기준 사기 피해 방지를 위해 믿을 수 있는 공식 대리점인지 확인하는 것이 중요합니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>광진구에서 이사를 가면 위약금 없이 인터넷을 이전 설치할 수 있나요?</h3>
+                    <p>네, 광진구 내 이사뿐 아니라 전국 어디로 이사를 가더라도 동일 통신사를 이용한다면 이전 설치(이전비 발생)가 가능하며, 약정 기간이 유지됩니다. 다만, 이전 설치가 불가능한 특수한 상황(예: 해외 이주)에는 위약금 없이 해지 가능한 예외 규정이 있으므로 고객센터에 문의해야 합니다. 광진구 자양동에서 구의동으로 이사하는 경우에도 이전 설치를 신청하면 됩니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>신뢰할 수 있는 외부 자료 및 참고 링크</h2>
+                <ul class="external-link-list">
+                    <li><a href="https://www.kcc.go.kr/index.do" target="_blank" rel="noopener">방송통신위원회 (통신 서비스 정책 및 규제 안내)</a></li>
+                    <li><a href="https://www.kca.go.kr/index.do" target="_blank" rel="noopener">한국소비자원 (통신 서비스 소비자 피해구제 및 분쟁 해결 기준 안내)</a></li>
+                    <li><a href="https://www.law.go.kr/lsInfoP.do?lsiSeq=216395&efYd=20210323#0000" target="_blank" rel="noopener">법제처: 전기통신사업법 (인터넷 서비스 관련 법률)</a></li>
+                    <li><a href="https://www.go.go.go.kr/info/mov_step.html" target="_blank" rel="noopener">정부24: 이사 시 전입신고 및 통신 서비스 이전 신고 가이드</a></li>
+                    <li><a href="https://ko.wikipedia.org/wiki/%EC%B4%88%EA%B3%A0%EC%86%8D_%EC%9D%B8%ED%84%B0%EB%84%B7" target="_blank" rel="noopener">위키백과: 초고속 인터넷 (기술 정의 및 역사)</a></li>
+                </ul>
+                <p>위 자료들은 광진구 인터넷 가입 시 소비자가 반드시 알아야 할 법적 권리, 서비스 기준, 소비자 보호 규정 등을 확인하는 데 유용합니다.</p>
+            </div>
+        </section>
     </main>
-  </body>
-</html>
+
+    <script>
+        // FAQ 토글 기능
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+
+  
